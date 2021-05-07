@@ -1,4 +1,4 @@
-fetch("https://nepalcorona.info/api/v1/data/nepal")
+fetch("https://corona.askbhunte.com/api/v1/data/nepal")
   .then((apiData) => {
     return apiData.json();
   })
@@ -15,7 +15,7 @@ fetch("https://nepalcorona.info/api/v1/data/nepal")
     const testedNeg = data.tested_negative;
     const testedRdt = data.tested_rdt;
 
-    const update = data.updated_at;
+    const update = new Date(data.updated_at);
 
     document.getElementById("cases").innerHTML = `${totalCases}`;
     document.getElementById("recover").innerHTML = `${totalRecovered}`;
